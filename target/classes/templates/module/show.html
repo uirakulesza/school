@@ -36,18 +36,14 @@
 					<td th:text="${student.name}"></td> 
 					<td th:text="${student.email}"></td>
 					<td th:text="${student.registration}"></td>  
-					<td>
-							<a th:href="@{/modules/{id}(id = ${module.id})}">Show</a> 
-					 		<a th:href="@{/modules/{id}/edit(id = ${module.id})}">Edit</a> 
-							<a href="#">Destroy</a> 
-					</td>
 				</tr>
 			</tbody>
 		</table>
-
-		<a th:href="@{/modules/{id}/edit(id = ${module.id})}">Edit this record</a> <br/>
-		<a href="#">Delete this record</a> <br/>
-		<a th:href="@{/modules}">Back to list Module</a> <br/>
+		
+		<a th:href="@{/modules}" class="btn btn-primary">Back to list Module</a>
+		<a th:href="@{/modules/{id}/edit(id = ${module.id})}" class="btn btn-info">Edit this record</a>
+		<a th:href="${module.id +'/delete'}" class="btn btn-danger">Delete this record</a>
+		
 	</div>
 </body>
 </html>

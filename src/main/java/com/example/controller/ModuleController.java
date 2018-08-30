@@ -96,7 +96,7 @@ public class ModuleController {
 		return "redirect:/modules/" + module.getId();
 	}
 	
-	@DeleteMapping("/{id}")
+	@RequestMapping("/{id}/delete")
 	public String delete(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
 		try {
 			if (id != null) {
@@ -108,7 +108,7 @@ public class ModuleController {
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
 			throw new ServiceException(e.getMessage());
 		}
-		return "redirect:/modules/index";
+		return "redirect:/modules/";
 	}
 
 }

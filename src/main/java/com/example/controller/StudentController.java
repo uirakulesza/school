@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -61,21 +60,13 @@ public class StudentController {
 		List<Module> all = moduleService.findAll();
 		model.addAttribute("modules", all);
 		
-		for(Module m : all) {
-			System.out.println(m.getId());
-		}
-		
 		return "student/form";
 	}
 	
 	@PostMapping
 	public String create(@Valid @ModelAttribute Student entityStudent, @Valid @ModelAttribute Module entityModule ,BindingResult result, RedirectAttributes redirectAttributes) {
 		Student student = null;
-		
-		//System.out.println(entityModule.getId());
-		System.out.println(entityModule.getName());
-		//System.out.println(entityStudent.);
-		
+	
 		try {
 			student = studentService.save(entityStudent);
 			redirectAttributes.addFlashAttribute("success", MSG_SUCESS_INSERT);
@@ -119,7 +110,7 @@ public class StudentController {
 		return "redirect:/students/" + student.getId();
 	}
 	
-	@DeleteMapping("/{id}")
+	@RequestMapping("/{id}/delete")
 	public String delete(@PathVariable("id") Integer id, RedirectAttributes redirectAttributes) {
 		try {
 			if (id != null) {
@@ -131,7 +122,7 @@ public class StudentController {
 			redirectAttributes.addFlashAttribute("error", MSG_ERROR);
 			throw new ServiceException(e.getMessage());
 		}
-		return "redirect:/students/index";
+		return "redirect:/students/";
 	}
 
 }
