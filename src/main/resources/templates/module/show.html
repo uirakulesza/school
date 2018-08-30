@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1" />
+<meta name="description" content="" />
+<meta name="author" content="" />
+<title>Show Module</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<h1>Show Module</h1>
+		<hr />
+		<div class="form-group"> 
+			<label for="code">Code: </label>  
+			<span th:text="${module.code}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="name">Name: </label>  
+			<span th:text="${module.name}"></span> 
+		</div> 
+
+		<a th:href="@{/modules/{id}/edit(id = ${module.id})}">Edit this record</a> <br/>
+		<a href="#">Delete this record</a> <br/>
+		<a th:href="@{/modules}">Back to list Module</a> <br/>
+	</div>
+</body>
+</html>
