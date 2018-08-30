@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.model.Module;
@@ -73,8 +71,12 @@ public class StudentController {
 	@PostMapping
 	public String create(@Valid @ModelAttribute Student entityStudent, @Valid @ModelAttribute Module entityModule ,BindingResult result, RedirectAttributes redirectAttributes) {
 		Student student = null;
-		try {
 		
+		//System.out.println(entityModule.getId());
+		System.out.println(entityModule.getName());
+		//System.out.println(entityStudent.);
+		
+		try {
 			student = studentService.save(entityStudent);
 			redirectAttributes.addFlashAttribute("success", MSG_SUCESS_INSERT);
 		} catch (Exception e) {
@@ -89,8 +91,12 @@ public class StudentController {
 	
 	@GetMapping("/{id}/edit")
 	public String update(Model model, @PathVariable("id") Integer id) {
+		
 		try {
 			if (id != null) {
+				List<Module> all = moduleService.findAll();
+				model.addAttribute("modules", all);
+				
 				Student entity = studentService.findOne(id).get();
 				model.addAttribute("student", entity);
 			}

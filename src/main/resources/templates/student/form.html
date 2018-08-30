@@ -34,10 +34,10 @@
 					class="form-control" th:field="*{registration}" />
 			</div>
 			 
-			 <div class="form-group">
-				 <select th:field="*{module}">
+			 <div class="form-group" th:object="${module}">
+				 <select name="module.id" class="form-control">
 					 <option value="">Selecione o Modulo</option>
-			 		 <option th:each="module : ${modules}" th:value="${module}" th:text="${module}"></option>
+			 		 <option th:each="module : ${modules}" th:value="${module.id}" th:text="${module.name}"></option>
 				</select>	
 			 </div>
 

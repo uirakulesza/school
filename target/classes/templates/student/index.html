@@ -11,9 +11,9 @@
 <body>
 
 	<div layout:fragment="content">
-		<h1>List Student</h1>
+		<h1>Student List</h1>
 		<hr />
-		<a th:href="@{/students/new}">New Student</a><br/><br/>
+		<a th:href="@{/students/new}" class="btn btn-success">New Student</a><br/><br/>
 		
 		<table class="table">
 			<thead>
@@ -29,12 +29,12 @@
 				<tr th:each="student : ${listStudent}">
 					<td th:text="${student.name}"></td> 
 					<td th:text="${student.email}"></td> 
-					<td th:text="${student.registration}"></td> 
-					<td th:text="*{module}"></td>
+					<td th:text="${student.registration}"></td>
+					<td th:text="${student.module}"></td>  
 					<td>
-							<a th:href="@{/students/{id}(id = ${student.id})}">Show</a> 
-					 		<a th:href="@{/students/{id}/edit(id = ${student.id})}">Edit</a> 
-							<a href="#">Destroy</a> 
+							<a th:href="@{/students/{id}(id = ${student.id})}" class="btn btn-primary" >Show</a> 
+					 		<a th:href="@{/students/{id}/edit(id = ${student.id})}" class="btn btn-info">Edit</a> 
+							<a href="#" class="btn btn-danger">Destroy</a> 
 					</td>
 				</tr>
 			</tbody>

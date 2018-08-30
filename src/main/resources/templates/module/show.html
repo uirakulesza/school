@@ -22,6 +22,28 @@
 			<label for="name">Name: </label>  
 			<span th:text="${module.name}"></span> 
 		</div> 
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th> 
+					<th>Email</th> 
+					<th>Registration</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="student : ${module.students}">
+					<td th:text="${student.name}"></td> 
+					<td th:text="${student.email}"></td>
+					<td th:text="${student.registration}"></td>  
+					<td>
+							<a th:href="@{/modules/{id}(id = ${module.id})}">Show</a> 
+					 		<a th:href="@{/modules/{id}/edit(id = ${module.id})}">Edit</a> 
+							<a href="#">Destroy</a> 
+					</td>
+				</tr>
+			</tbody>
+		</table>
 
 		<a th:href="@{/modules/{id}/edit(id = ${module.id})}">Edit this record</a> <br/>
 		<a href="#">Delete this record</a> <br/>

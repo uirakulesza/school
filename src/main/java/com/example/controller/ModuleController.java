@@ -32,6 +32,7 @@ public class ModuleController {
 
 	@Autowired
 	private ModuleService moduleService;
+	
 
 	@GetMapping
 	public String index(Model model) {

@@ -25,7 +25,8 @@
 				<label for="registration">Registration: </label>  
 				<span th:text="${student.registration}"></span> 
 			</div> 
-	
+			
+			
 			<a th:href="@{/students/{id}/edit(id = ${student.id})}">Edit this record</a> <br/>
 			<a href="#">Delete this record</a> <br/>
 			<a th:href="@{/students}">Back to list Student</a> <br/>
