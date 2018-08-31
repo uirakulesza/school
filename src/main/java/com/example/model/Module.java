@@ -12,7 +12,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 
-
 @Entity
 @Table(name = "modules")
 public class Module implements Serializable {
@@ -36,9 +35,6 @@ public class Module implements Serializable {
     @OneToMany(mappedBy="module", cascade = CascadeType.ALL)
     List<Student> students;
     
-    
-
-	
 	public void setCode(String code) {this.code = code;}
 	public String getCode() {return code;}
 	
@@ -51,10 +47,6 @@ public class Module implements Serializable {
 	public List<Student> getStudents() {
 		return students;
 	}
-	public void setStudents(List<Student> students) {
-		this.students = students;
-	}
+	public void setStudents(List<Student> students) {this.students = students;}
 
-	
-	
 }
