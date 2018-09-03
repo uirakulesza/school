@@ -35,13 +35,12 @@ public class StudentController {
 	private StudentService studentService;
 	
 	@Autowired
-	private ModuleService moduleService; //module service
+	private ModuleService moduleService;
 
 	@GetMapping
 	public String index(Model model) {
 		List<Student> all = studentService.findAll();
 		model.addAttribute("listStudent", all);
-		model.addAttribute("");
 		return "student/index";
 	}
 	
@@ -55,7 +54,7 @@ public class StudentController {
 	}
 
 	@GetMapping(value = "/new")
-	public String create(Model model, @ModelAttribute Student entityStudent, @ModelAttribute Module entityModule) {
+	public String create(Model model, @ModelAttribute Student entityStudent) {
 		model.addAttribute("student", entityStudent);
 		List<Module> all = moduleService.findAll();
 		model.addAttribute("modules", all);
@@ -77,19 +76,15 @@ public class StudentController {
 		return "redirect:/students/" + student.getId();
 	}
 	
-	
-	
-	
 	@GetMapping("/{id}/edit")
 	public String update(Model model, @PathVariable("id") Integer id) {
-		
 		try {
 			if (id != null) {
-				List<Module> all = moduleService.findAll();
-				model.addAttribute("modules", all);
-				
 				Student entity = studentService.findOne(id).get();
 				model.addAttribute("student", entity);
+				
+				List<Module> all = moduleService.findAll();
+				model.addAttribute("listModule", all);			
 			}
 		} catch (Exception e) {
 			throw new ServiceException(e.getMessage());

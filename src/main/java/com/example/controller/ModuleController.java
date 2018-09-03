@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.example.model.Module;
+import com.example.model.Professor;
 import com.example.model.Student;
 import com.example.service.ModuleService;
+import com.example.service.ProfessorService;
 
 @Controller
 @RequestMapping("/modules")
@@ -31,6 +33,9 @@ public class ModuleController {
 
 	@Autowired
 	private ModuleService moduleService;
+	
+	@Autowired
+	private ProfessorService professorService;
 	
 
 	@GetMapping
@@ -52,7 +57,8 @@ public class ModuleController {
 	@GetMapping(value = "/new")
 	public String create(Model model, @ModelAttribute Module entityModule, @ModelAttribute Student entityStudent) {
 		model.addAttribute("module", entityModule);
-		
+		List<Professor> all = professorService.findAll();
+		model.addAttribute("listProfessor", all);
 		return "module/form";
 	}
 	
@@ -75,6 +81,8 @@ public class ModuleController {
 			if (id != null) {
 				Module entity = moduleService.findOne(id).get();
 				model.addAttribute("module", entity);
+				List<Professor> all = professorService.findAll();
+				model.addAttribute("listProfessor", all);
 			}
 		} catch (Exception e) {
 			throw new ServiceException(e.getMessage());

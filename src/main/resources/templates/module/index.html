@@ -20,14 +20,16 @@
 			<thead>
 				<tr>
 					<th>Code</th> 
-					<th>Name</th> 
+					<th>Name</th>
+					<th>Professor</th> 
 					<th>Action</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="module : ${listModule}">
 					<td th:text="${module.code}"></td> 
-					<td th:text="${module.name}"></td> 
+					<td th:text="${module.name}"></td>
+					<td th:text="${module.professor.name}"></td>  
 					<td>
 							<a th:href="@{/modules/{id}(id = ${module.id})}" class="btn btn-primary">Show</a> 
 					 		<a th:href="@{/modules/{id}/edit(id = ${module.id})}" class="btn btn-info">Edit</a> 

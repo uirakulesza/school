@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -35,6 +37,10 @@ public class Module implements Serializable {
     @OneToMany(mappedBy="module", cascade = CascadeType.ALL)
     List<Student> students;
     
+    @ManyToOne
+    @JoinColumn(name="professor_id")
+    private Professor professor;
+    
 	public void setCode(String code) {this.code = code;}
 	public String getCode() {return code;}
 	
@@ -44,9 +50,12 @@ public class Module implements Serializable {
 	public Integer getId() { return id; }
 	public void setId(Integer id) { this.id = id; }
 	
-	public List<Student> getStudents() {
-		return students;
-	}
+	public List<Student> getStudents() {return students;}
 	public void setStudents(List<Student> students) {this.students = students;}
+	
+	public Professor getProfessor() {return professor;}
+	public void setProfessor(Professor professor) {this.professor = professor;}
+	
+	
 
 }

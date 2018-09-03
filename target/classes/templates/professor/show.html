@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>Show Professor</title>
+	</head>
+	<body>
+	
+	<div layout:fragment="content">
+		<h1>Show Professor</h1>
+		<hr />
+		<div class="form-group"> 
+			<label for="code">Siape: </label>  
+			<span th:text="${professor.siape}"></span> 
+		</div> 
+		<div class="form-group"> 
+			<label for="name">Name: </label>  
+			<span th:text="${professor.name}"></span> 
+		</div> 
+		
+		<div class="form-group"> 
+			<label for="name">Email: </label>  
+			<span th:text="${professor.email}"></span> 
+		</div> 
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Code</th> 
+					<th>Name</th> 
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="module : ${professor.modules}">
+					<td th:text="${module.code}"></td> 
+					<td th:text="${module.name}"></td>
+				</tr>
+			</tbody>
+		</table>
+		
+			<a th:href="@{/professors}" class="btn btn-primary" >Back to list Professor</a> 
+			<a th:href="@{/professors/{id}/edit(id = ${professor.id})}" class="btn btn-info">Edit this record</a>
+			<a th:href="${professor.id +'/delete'}" class="btn btn-danger">Delete this record</a>
+	
+	</body>
+
+</html>
