@@ -57,7 +57,7 @@ public class StudentController {
 	public String create(Model model, @ModelAttribute Student entityStudent) {
 		model.addAttribute("student", entityStudent);
 		List<Module> all = moduleService.findAll();
-		model.addAttribute("modules", all);
+		model.addAttribute("listModule", all);
 		
 		return "student/form";
 	}

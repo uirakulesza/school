@@ -1,0 +1,12 @@
+
+`com.example.controller.StudentController#index(Lorg/springframework/ui/Model;)Ljava/lang/String;
+__unknown_file (model"1*Å
+1q
+g/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/StudentController.java* *($ˇ
+q
+g/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/StudentController.java+ +((%0morg.springframework.ui.Model#addAttribute(Ljava/lang/String;Ljava/lang/Object;)Lorg/springframework/ui/Model;"
+listStudent"
+"""Ü
+q
+g/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/StudentController.java, ,(
+student/index

@@ -1,0 +1,15 @@
+
+òcom.example.controller.ProfessorController#delete(Ljava/lang/Integer;Lorg/springframework/web/servlet/mvc/support/RedirectAttributes;)Ljava/lang/String;
+__unknown_file (idredirectAttributes"6"1*ã
+1s
+i/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ProfessorController.javar	 r( "ê
+s
+i/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ProfessorController.javar r(!
+redirect:/professors/*«
+6s
+i/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ProfessorController.javak k(«
+s
+i/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ProfessorController.javak k(F%0∂org.springframework.web.servlet.mvc.support.RedirectAttributes#addFlashAttribute(Ljava/lang/String;Ljava/lang/Object;)Lorg/springframework/web/servlet/mvc/support/RedirectAttributes;"	
+success"
+""*
+1

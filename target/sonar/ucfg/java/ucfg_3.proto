@@ -1,0 +1,20 @@
+
+¬com.example.controller.ModuleController#create(Ljava/lang/Module;Lorg/springframework/validation/BindingResult;Lorg/springframework/web/servlet/mvc/support/RedirectAttributes;)Ljava/lang/String;
+__unknown_file (entityresultredirectAttributes"4*î
+1p
+f/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ModuleController.javaK	 K(†
+p
+f/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ModuleController.javaK	 K(.%2__concat"
+redirect:/modules/"
+"""z
+p
+f/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ModuleController.javaK K(/
+
+%2*¡
+4p
+f/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ModuleController.javaE E(&ƒ
+p
+f/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ModuleController.javaF F(E%0∂org.springframework.web.servlet.mvc.support.RedirectAttributes#addFlashAttribute(Ljava/lang/String;Ljava/lang/Object;)Lorg/springframework/web/servlet/mvc/support/RedirectAttributes;"	
+success"
+""*
+1

@@ -1,0 +1,7 @@
+organization=guilhermeddf-github
+projectKey=guilhermeddf_school
+serverUrl=https://sonarcloud.io
+serverVersion=7.4.0.16400
+dashboardUrl=https://sonarcloud.io/dashboard?id=guilhermeddf_school
+ceTaskId=AWWmXXpHrTLJJHS-HhRw
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWWmXXpHrTLJJHS-HhRw

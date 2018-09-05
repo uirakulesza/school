@@ -1,0 +1,13 @@
+
+_com.example.controller.ModuleController#index(Lorg/springframework/ui/Model;)Ljava/lang/String;
+__unknown_file (model"1*¸
+1p
+f/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ModuleController.java+ +("˝
+p
+f/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ModuleController.java, ,('%0morg.springframework.ui.Model#addAttribute(Ljava/lang/String;Ljava/lang/Object;)Lorg/springframework/ui/Model;"
+
+listModule"
+"""Ñ
+p
+f/home/guilhermeddf/√Årea de Trabalho/school/src/main/java/com/example/controller/ModuleController.java- -(
+module/index
