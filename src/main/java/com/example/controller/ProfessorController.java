@@ -17,9 +17,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.model.Module;
 import com.example.model.Professor;
-import com.example.service.ModuleService;
 import com.example.service.ProfessorService;
 
 @Controller
@@ -33,9 +31,6 @@ public class ProfessorController {
 	
 	@Autowired
 	private ProfessorService professorService;
-	
-	@Autowired
-	private ModuleService moduleService;
 	
 	@GetMapping
 	public String index(Model model) {

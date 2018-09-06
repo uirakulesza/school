@@ -1,15 +1,14 @@
 package com.example.service;
 
-import org.springframework.transaction.annotation.Transactional;
-
-import com.example.model.User;
-import com.example.repository.UserRepository;
-
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.example.model.User;
+import com.example.repository.UserRepository;
 
 @Service
 @Transactional(readOnly=true)
@@ -32,5 +31,9 @@ public class UserService {
 	
 	public void delete(User entity) {
 		 userRepository.delete(entity);
+	}
+	
+	public User findByUsername(String username) {
+		return userRepository.findByUsername(username);
 	}
 }

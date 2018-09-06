@@ -13,7 +13,7 @@ import org.springframework.data.domain.Persistable;
 import org.springframework.security.core.GrantedAuthority;
 
 @Entity
-@Table(name="role")
+@Table(name="roles")
 public class Role implements GrantedAuthority, Persistable<Integer>{
 	private static final long serialVersionUID = 1L;
 
