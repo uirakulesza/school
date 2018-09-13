@@ -37,6 +37,7 @@ public class StudentController {
 	@Autowired
 	private ModuleService moduleService; //module service
 
+	// Primeira tela da pagina de Students
 	@GetMapping
 	public String index(Model model) {
 		List<Student> all = studentService.findAll();
@@ -45,6 +46,7 @@ public class StudentController {
 		return "student/index";
 	}
 	
+	// Tela de Show Student
 	@GetMapping("/{id}")
 	public String show(Model model, @PathVariable("id") Integer id) {
 		if (id != null) {
@@ -54,15 +56,17 @@ public class StudentController {
 		return "student/show";
 	}
 
+	// Tela com Formulario de New Student
 	@GetMapping(value = "/new")
 	public String create(Model model, @ModelAttribute Student entityStudent, @ModelAttribute Module entityModule) {
-		model.addAttribute("student", entityStudent);
+		// model.addAttribute("student", entityStudent);
 		List<Module> all = moduleService.findAll();
 		model.addAttribute("modules", all);
 		
 		return "student/form";
 	}
 	
+	// Processamento do formulario New Student (ou Alter Student) 
 	@PostMapping
 	public String create(@Valid @ModelAttribute Student entityStudent, @Valid @ModelAttribute Module entityModule ,BindingResult result, RedirectAttributes redirectAttributes) {
 		Student student = null;
