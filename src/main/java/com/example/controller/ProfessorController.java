@@ -6,7 +6,6 @@ import javax.validation.Valid;
 
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -32,9 +31,6 @@ public class ProfessorController {
 	
 	@Autowired
 	private ProfessorService professorService;
-	
-	@Autowired
-	private BCryptPasswordEncoder encoder;
 	
 	@GetMapping
 	public String index(Model model) {
@@ -62,7 +58,6 @@ public class ProfessorController {
 	public String create(@Valid @ModelAttribute Professor entityProfessor, BindingResult result, RedirectAttributes redirectAttributes) {
 		Professor professor = null;
 		try {
-			professor.setPassword(encoder.encode(professor.getPassword()));
 			professor = professorService.save(entityProfessor);
 			redirectAttributes.addFlashAttribute("success", MSG_SUCESS_INSERT);
 		} catch (Exception e) {
