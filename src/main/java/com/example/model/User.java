@@ -42,7 +42,7 @@ public class User implements Serializable, UserDetails, Persistable<Integer> {
 	
 	@Column(name="password")
 	private String password;
-	
+	 
 	@Column(name="enabled")
 	private Integer enabled;
 	
@@ -74,41 +74,36 @@ public class User implements Serializable, UserDetails, Persistable<Integer> {
 	public Set<Role> getRoles() {return roles;}
 	public void setRoles(Set<Role> roles) {this.roles = roles;}
 
-	@Override
 	public boolean isNew() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
-	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
-	@Override
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
-	@Override
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
 
-	@Override
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return true;
+		return false;
 	}
+
 	
 	
 }

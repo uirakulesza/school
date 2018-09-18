@@ -40,16 +40,6 @@ public class Role implements GrantedAuthority, Persistable<Integer>{
 	public int hashCode() {
 		return Objects.hash(id);
 	}
-	
-	@Override
-	public String getAuthority() {
-		return identifier;
-	}
-	
-	@Override
-	public boolean isNew() {
-		return id == 0;
-	}
 
 	public Integer getId() {return id;}
 	public void setId(Integer id) {this.id = id;}
@@ -59,6 +49,15 @@ public class Role implements GrantedAuthority, Persistable<Integer>{
 
 	public String getName() {return name;}
 	public void setName(String name) {this.name = name;}
+
+	public boolean isNew() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public String getAuthority() {
+		return name;
+	}
 	
 	
 	
