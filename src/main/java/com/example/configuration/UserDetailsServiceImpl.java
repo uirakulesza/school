@@ -2,15 +2,15 @@ package com.example.configuration;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Repository;
 
 import com.example.model.User;
 import com.example.repository.UserRepository;
 
-@Configuration
+@Repository
 public class UserDetailsServiceImpl implements UserDetailsService{
 	
 	@Autowired
@@ -22,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService{
 		if(entity == null) {
 			throw new UsernameNotFoundException("Usuário não encontrado!");
 		}
-		return new org.springframework.security.core.userdetails.User(entity.getUsername(), entity.getPassword(), entity.getRoles());
+		return entity;
 	}
 
 	

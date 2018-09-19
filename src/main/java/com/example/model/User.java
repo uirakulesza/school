@@ -2,7 +2,6 @@ package com.example.model;
 
 import java.io.Serializable;
 import java.util.Collection;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,8 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.domain.Persistable;
@@ -46,9 +44,9 @@ public class User implements Serializable, UserDetails, Persistable<Integer> {
 	@Column(name="enabled")
 	private Integer enabled;
 	
-	@ManyToMany(cascade=CascadeType.MERGE)
-	@JoinTable(name="user_role", joinColumns=@JoinColumn(name="user_id"), inverseJoinColumns=@JoinColumn(name="role_id"))
-	private Set<Role> roles;
+	@ManyToOne(cascade=CascadeType.MERGE)
+    @JoinColumn(name="role_id")
+	private Role role;
 
 	@Override
 	public String toString() {return "User [name=" + name + "]";}
@@ -71,8 +69,8 @@ public class User implements Serializable, UserDetails, Persistable<Integer> {
 	public Integer getEnabled() {return enabled;}
 	public void setEnabled(Integer enabled) {this.enabled = enabled;}
 	
-	public Set<Role> getRoles() {return roles;}
-	public void setRoles(Set<Role> roles) {this.roles = roles;}
+	public Role getRole() {return role;}
+	public void setRole(Role role) {this.role = role;}
 
 	public boolean isNew() {
 		// TODO Auto-generated method stub
@@ -86,24 +84,23 @@ public class User implements Serializable, UserDetails, Persistable<Integer> {
 
 	public boolean isAccountNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public boolean isAccountNonLocked() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public boolean isCredentialsNonExpired() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	public boolean isEnabled() {
 		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
-	
 	
 }

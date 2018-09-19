@@ -8,7 +8,6 @@ import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -63,7 +62,7 @@ public class StudentController {
 	}
 	
 	@PostMapping
-	public String create(@Valid @ModelAttribute Student entityStudent, @Valid @ModelAttribute Module entityModule ,BindingResult result, RedirectAttributes redirectAttributes) {
+	public String create(@Valid @ModelAttribute Student entityStudent, RedirectAttributes redirectAttributes) {
 		Student student = null;
 	
 		try {
@@ -93,7 +92,7 @@ public class StudentController {
 	}
 	
 	@PutMapping
-	public String update(@Valid @ModelAttribute Student entity, BindingResult result, RedirectAttributes redirectAttributes) {
+	public String update(@Valid @ModelAttribute Student entity, RedirectAttributes redirectAttributes) {
 		Student student = null;
 		try {
 			student = studentService.save(entity);
