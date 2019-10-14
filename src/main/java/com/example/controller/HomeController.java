@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 	
+	// Comentario de teste
 	@RequestMapping("/")
 	public String home() {
 		return "home";
