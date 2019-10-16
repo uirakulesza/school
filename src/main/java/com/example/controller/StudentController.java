@@ -38,6 +38,7 @@ public class StudentController {
 	private ModuleService moduleService; //module service
 
 	// Primeira tela da pagina de Students
+	// Acesso direto a camada de servico
 	@GetMapping
 	public String index(Model model) {
 		List<Student> all = studentService.findAll();
