@@ -24,6 +24,7 @@ import com.example.service.ModuleService;
 @RequestMapping("/modules")
 public class ModuleController {
 
+	// Mensagens utilizadas
 	private static final String MSG_SUCESS_INSERT = "Module inserted successfully.";
 	private static final String MSG_SUCESS_UPDATE = "Module successfully changed.";
 	private static final String MSG_SUCESS_DELETE = "Deleted Module successfully.";

@@ -47,6 +47,7 @@ public class StudentController {
 	}
 	
 	// Tela de Show Student
+	// Implementada em ThymeLeaf
 	@GetMapping("/{id}")
 	public String show(Model model, @PathVariable("id") Integer id) {
 		if (id != null) {
