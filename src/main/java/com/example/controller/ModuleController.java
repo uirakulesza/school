@@ -41,6 +41,8 @@ public class ModuleController {
 		return "module/index";
 	}
 	
+	
+	// Show Modules
 	@GetMapping("/{id}")
 	public String show(Model model, @PathVariable("id") Integer id) {
 		if (id != null) {
