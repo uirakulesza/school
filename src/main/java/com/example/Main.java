@@ -2,6 +2,7 @@ package com.example;
 
 public class Main {
 
+   // Método principal
    public void method1(){
    
    }
